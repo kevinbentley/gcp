@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ground Control Point App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Ground Control Point Application</h1>
+
+    <div id="gcp-entry">
+        <h2>Create New GCP</h2>
+        <input type="text" id="new-gcp-name" placeholder="GCP Name">
+        <input type="number" id="new-gcp-lat" placeholder="Latitude">
+        <input type="number" id="new-gcp-lon" placeholder="Longitude">
+        <button id="create-gcp-btn">Create GCP</button>
+    </div>
+
+    <div id="upload-section">
+        <h2>Upload Images</h2>
+        <input type="file" id="file-input" multiple>
+        <button id="upload-btn">Upload</button>
+    </div>
+
+    <div id="image-gallery">
+        <h2>Image Gallery</h2>
+        <select id="image-select">
+            <option value="">Select an Image</option>
+        </select>
+        <div id="image-container">
+            <img id="selected-image" src="" alt="Selected Image">
+            <div class="gcp-marker" style="display: none;"></div>
+        </div>
+    </div>
+
+    <div id="gcp-section">
+        <h2>Available GCPs</h2>
+        <ul id="gcp-list">
+            </ul>
+    </div>
+
+    <div id="status-field">Status: Ready</div>
+
+    <div>
+        <button id="download-csv-btn">Download CSV</button>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
